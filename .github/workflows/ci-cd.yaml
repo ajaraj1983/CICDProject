@@ -1,0 +1,27 @@
+name: Continuous Integration
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Check Out Code 
+              uses: actions/checkout@v2
+            
+            - name: Setup .Net 8
+              uses: actions/setup-dotnet@v1
+              with:
+                dotnet-version: "8.0.3"
+            
+            - name: Restore Dependencies
+              run: dotnet restore
+
+            - name: Build app
+              run: dotnet build -c Release --no-restore
+
+
+
