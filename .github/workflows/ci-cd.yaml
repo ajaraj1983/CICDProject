@@ -7,15 +7,15 @@ on:
 
 jobs:
     build:
-        runs-on: ubuntu-latest
+        runs-on: windows-latest
         steps:
             - name: Check Out Code 
               uses: actions/checkout@v2
             
-            - name: Setup .Net 6
+            - name: Setup .Net 8
               uses: actions/setup-dotnet@v1
               with:
-                dotnet-version: "6.0.x"
+                dotnet-version: "8.0.x"
             
             - name: Restore Dependencies
               run: dotnet restore
