@@ -8,5 +8,12 @@ namespace APITestProject
             Assert.True(1==1);
 
         }
+
+        [Fact]
+        public void Test2()
+        {
+            Assert.False(1 == 0);
+
+        }
     }
 }
