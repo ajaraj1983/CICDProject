@@ -1,3 +1,6 @@
+using APIProject;
+
+
 namespace APITestProject
 {
     public class UnitTest1
@@ -12,7 +15,9 @@ namespace APITestProject
         [Fact]
         public void Test2()
         {
-            Assert.False(1 == 0);
+            
+            
+            Assert.True(VerifyTest.checkTest() == 5);
 
         }
     }
