@@ -20,6 +20,10 @@ jobs:
             - name: Start SQL Server
               run:
                 docker run -d -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=@Raj0806' -e 'MSSQL_PID=Express' -p 1433:1433 -d mcr.microsoft.com/windows/servercore:ltsc2022
+
+            - name: Sleep for 30 seconds
+              run: Start-Sleep -s 30
+              shell: powershell
             
             - name: Restore Dependencies
               run: dotnet restore
